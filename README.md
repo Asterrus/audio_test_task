@@ -4,11 +4,13 @@
    База данных - PostgreSQL  
    ORM - SQLAlchemy, миграции - Alembic  
    Проект разворачивается с помощью docker compose  
-   Python версии 3.11.1
+   Python версии 3.11.1  
+   Для конвертации аудио файлов используются FFmpeg и pydub.  
 ### Технологии:
 ![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-092E20?style=for-the-badge&logo=FastAPI&logoColor=green)
 ![Docker](https://img.shields.io/badge/Docker-092E20?style=for-the-badge&logo=docker&logoColor=blue)
+![FFmpeg](https://img.shields.io/badge/FFmpeg-092E20?style=for-the-badge&logo=FFmpeg&logoColor=green)
 ### Используемые пакеты:
 * fastapi==0.95.2
 * asyncpg==0.27.0  
