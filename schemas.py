@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-# User
+
 class UserBase(BaseModel):
     name: str
 
@@ -22,18 +22,6 @@ class UserCreate(UserBase):
 
 class User(UserBase, UserSecrets):
     id: int
-
-    class Config:
-        orm_mode = True
-
-# Audio
-class AudioBase(BaseModel):
-    UUID: str
-    user_UUID: str
-
-class Audio(AudioBase):
-    id: int
-    file_path: str
 
     class Config:
         orm_mode = True

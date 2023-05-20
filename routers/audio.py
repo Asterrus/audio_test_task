@@ -8,9 +8,9 @@ from database.db import database
 from database.models import Audio
 from utils.exceptions import (UserNotFoundException, FileFormatException,
                               FileNotFoundException, ConvertationException)
-from utils.functions import to_mp3_converter, to_mp3_format_change, \
-    unique_string_generator
-from schemas import AudioBase
+from utils.functions import (to_mp3_converter, to_mp3_format_change,
+                             unique_string_generator)
+
 MEDIA_DIR = 'files/'
 
 audio_router = APIRouter(
@@ -44,9 +44,9 @@ async def upload_file(db: database, request: Request,
 
 
 @audio_router.get("/record")
-async def download_file(db: database, audio: AudioBase) -> FileResponse:
+async def download_file(db: database, id: str, user: str) -> FileResponse:
     """Скачивание файла с сервера"""
-    file: Audio = await get_file(db, audio.UUID, audio.user_UUID)
+    file: Audio = await get_file(db, id, user)
     if not file:
         raise FileNotFoundException
     return FileResponse(file.file_path)
