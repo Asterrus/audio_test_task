@@ -1,8 +1,6 @@
 import uuid
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-import random
-from string import ascii_letters
 from database.models import User
 from schemas import UserCreate
 from utils.functions import unique_string_generator
@@ -14,7 +12,7 @@ async def create_user(db: AsyncSession, user: UserCreate):
 
     new_user = User(
         name=user.name,
-        unique_slug=unique_string_generator(),
+        unique_slug=user.name + unique_string_generator(10),
         UUID=str(uuid.uuid4()),
     )
     db.add(new_user)

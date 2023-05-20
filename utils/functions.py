@@ -4,9 +4,6 @@ from string import ascii_letters
 from fastapi import UploadFile
 from pydub import AudioSegment
 
-AudioSegment.converter = (r"C:\Users\Gastu\Desktop\ffmpeg-2023-05-18-git-01d9"
-                          r"a84ef5-full_build\ffmpeg-2023-05-18-git-01d9a84ef"
-                          r"5-full_build\bin\\ffmpeg.exe")
 
 DIR = 'files/'
 
