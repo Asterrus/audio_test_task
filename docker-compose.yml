@@ -25,7 +25,7 @@ services:
       db:
         condition: service_healthy
     volumes:
-      - .:/web
+      - web_volume:/web
     ports:
       - "8000:8000"
 
@@ -42,4 +42,5 @@ services:
       - web
 
 volumes:
+  web_volume:
   postgres:

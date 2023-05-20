@@ -13,6 +13,6 @@ user_router = APIRouter(
 
 @user_router.post('/sign_up', response_model=UserSecretsOut)
 async def sign_up(db: database, user: UserCreate):
-    """Создания пользователя"""
+    """Созданиe пользователя"""
     return await create_user(db, user)
 
